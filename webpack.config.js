@@ -58,7 +58,7 @@ module.exports = {
             title: 'Rouge Like',
             template: './src/index.html',
             filename: 'index.html',
-            // favicon: 'src/favicon.ico'
+            favicon: 'src/favicon.png'
         }),
         // For HMR, makes it easier to see which dependencies are being patched
         new webpack.NamedModulesPlugin(),
