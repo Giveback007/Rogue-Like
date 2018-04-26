@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "code . && npm run webpack-serve",
+    "start": "code . && npm run webpack-serve:open",
     "webpack-serve": "node_modules/.bin/webpack-dev-server",
+    "webpack-serve:open": "node_modules/.bin/webpack-dev-server --open",
     "webpack": "node_modules/.bin/webpack"
   },
   "author": "",

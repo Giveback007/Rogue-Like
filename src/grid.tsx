@@ -2,29 +2,37 @@ import * as React from "react";
 import { State } from './store/store';
 // import { connector } from "./store/connector";
 import { connect } from 'react-redux';
-import { Dispatch } from "redux";
+// import { Dispatch } from "redux";
 import { appInit } from "./store/actions";
 // import { AppActions, AppInit } from "./store/actions";
 
-const stateToProps = ({ test }: State) => ({ test });
+const stateToProps = ({ test, grid }: State) => ({ test, grid });
 const dispatchToProps = (dispatch: any
     // : Dispatch<AppActions>
 ) => ({
     appInit: () => dispatch(appInit)
 })
 
-// @connect(mapStateToProps, mapDispatchToProps)
 class GridComponent extends React.Component<
     ReturnType<typeof stateToProps> & 
     ReturnType<typeof dispatchToProps>
 > {
-    render() {
+    render({ props } = this) {
+        const hex = (arr) => arr.map((x, i) => <span className="hex" key={i}><div></div></span>)
+
+        const hexRows = (grid = props.grid) => 
+            grid.map((row, i) => <div className="hex-row" key={i}> { hex(row) } </div>)
+            
         return (
-            <div>
-                <button onClick={this.props.appInit}>Test</button>
-                <div>{this.props.test}</div>
+        <div>
+            <button onClick={props.appInit}>Test</button>
+            <h3>{ props.test }</h3>
+            <div className="hex-grid">
+                { hexRows() }
             </div>
-        )
+        </div>
+        
+        );
     }
 }
 

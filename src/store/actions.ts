@@ -8,6 +8,9 @@ export const APP_INIT = 'APP_INIT';
 // }
 // https://github.com/reactjs/redux/issues/2361
 
-export const appInit = { type: APP_INIT, payload: 'IT REALLY WORKS!' };
+export const appInit = { 
+    type: APP_INIT,
+    payload: 'IT REALLY WORKS!'
+};
 
 // export type AppActions = AppInit;
