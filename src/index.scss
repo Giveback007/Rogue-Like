@@ -1,37 +1,129 @@
-// .hex-row:nth-child(odd) {}
-.hex-row:nth-child(even) .hex:first-child {
-	margin-left: 52px;
-	margin-top: -20px;
+* {
+    box-sizing: border-box;
+    // border: 1px solid;
 }
 
-.hex-grid {
-    padding: 12px 0;
+// user REM
+
+.hex-row {
+    display: flex;
+    margin-top: 12.5px;
+    &.even {
+        margin-left: 26px;
+    }
 }
 
 .hex {
-    display: inline-block;
-    position: relative;
-    margin: 12px 1px;
+    margin: 1px;
     div {
-        width: 100px;
-        height: 55px;
-        background: red;
+        position: relative;
+        background: navy;
+        width: 50px;
+        height: 27.5px;
         &:before, &:after {
             content: "";
             position: absolute;
             left: 0;
             width: 0;
             height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
         }
         &:before {
-            top: -25px;
-            border-bottom: 25px solid red;
+            top: -12.5px;
+            border-bottom: 12.5px solid navy;
         }
         &:after {
-            bottom: -25px;
-            border-top: 25px solid red;
+            bottom: -12.5px;
+            border-top: 12.5px solid navy;
         }
     }
 }
+
+
+
+// .hex-row:nth-child(odd) {}
+// .hex-row:nth-child(even) .hex:first-child {
+// 	margin-left: 52px;
+// 	margin-top: -20px;
+// }
+
+// .hexagon-row {
+//     display: flex;
+// }
+
+// .hexagon {
+//     margin-left: 50px;
+//     margin-top: 50px;
+//     border: 1px solid black;
+//     position: relative;
+//     div {
+//         border: 1px solid blue;
+//         width: 100px;
+//         height: 55px;
+//         position: relative;
+//         &:before, &:after {
+//             content: "";
+//             position: absolute;
+//             left: 0;
+//             width: 0;
+//             height: 0;
+//             border-left: 50px solid transparent;
+//             border-right: 50px solid transparent;
+//         }
+//         &:before {
+//             top: -25px;
+//             border-bottom: 25px solid navy;
+//         }
+//         &:after {
+//             bottom: -25px;
+//             border-top: 25px solid navy;
+//         }
+//     }
+// }
+
+// .hexagon-content {
+//     border: 1px solid black;
+// }
+
+// .hex-grid {
+//     padding: 12px 0;
+// }
+
+// .hex {
+//     display: inline-block;
+//     position: relative;
+//     margin: 12px 1px;
+//     div {
+//         width: 100px;
+//         height: 55px;
+//         background: navy;
+//         &:before, &:after {
+//             content: "";
+//             position: absolute;
+//             left: 0;
+//             width: 0;
+//             height: 0;
+//             border-left: 50px solid transparent;
+//             border-right: 50px solid transparent;
+//         }
+//         &:before {
+//             top: -25px;
+//             border-bottom: 25px solid navy;
+//         }
+//         &:after {
+//             bottom: -25px;
+//             border-top: 25px solid navy;
+//         }
+//     }
+// }
+
+// .hex-content {
+//     border: 1px solid white;
+
+//     z-index: 1000;
+//     position: absolute;
+//     color: white;
+//     // po
+//     // background: green;
+// }

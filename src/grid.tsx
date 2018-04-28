@@ -18,14 +18,21 @@ class GridComponent extends React.Component<
     ReturnType<typeof dispatchToProps>
 > {
     render({ props } = this) {
-        const hex = (arr) => arr.map((x, i) => <span className="hex" key={i}><div></div></span>)
+        const hex = (arr) => arr.map((x, i) => 
+            <span className="hex" key={i}>
+                <div className="hex-inner">
+                    <div className="hex-content">
+                    { i % 2 ? 'stuff' : '*' }
+                    </div>
+                </div>
+            </span>)
 
         const hexRows = (grid = props.grid) => 
-            grid.map((row, i) => <div className="hex-row" key={i}> { hex(row) } </div>)
+            grid.map((row, i) => <div className={`hex-row ${i % 2 ? 'even' : 'odd'}`} key={i}> { hex(row) } </div>)
             
         return (
         <div>
-            <button onClick={props.appInit}>Test</button>
+            <button onClick={ props.appInit }>Test</button>
             <h3>{ props.test }</h3>
             <div className="hex-grid">
                 { hexRows() }
