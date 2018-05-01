@@ -12,7 +12,7 @@ export  interface State {
 const initState: State = {
     test: 'IT WORKS!',
     // fill not supported by ie11
-    grid: Array(8).fill(0).map((x) => Array(8).fill(0))
+    grid: Array(12).fill(0).map((x) => Array(12).fill(0))
 }
 
 const rootReducer: Reducer<State> = (state = initState, action: any) => {

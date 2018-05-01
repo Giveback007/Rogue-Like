@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 // import { Dispatch } from "redux";
 import { appInit } from "./store/actions";
 // import { AppActions, AppInit } from "./store/actions";
+// const heroSprite = require('./assets/hero.png');
 
 const stateToProps = ({ test, grid }: State) => ({ test, grid });
 const dispatchToProps = (dispatch: any
@@ -19,13 +20,14 @@ class GridComponent extends React.Component<
 > {
     render({ props } = this) {
         const hex = (arr) => arr.map((x, i) => 
-            <span className="hex" key={i}>
+            <div className="hex" key={i}>
                 <div className="hex-inner">
-                    <div className="hex-content">
-                    { i % 2 ? 'stuff' : '*' }
+                    <div className="hex-content"> 
+                        <div className="hero">
+                        </div>
                     </div>
                 </div>
-            </span>)
+            </div>)
 
         const hexRows = (grid = props.grid) => 
             grid.map((row, i) => <div className={`hex-row ${i % 2 ? 'even' : 'odd'}`} key={i}> { hex(row) } </div>)
