@@ -1,0 +1,27 @@
+// hero source:
+// https://opengameart.org/content/classic-knight-animated
+
+@mixin get-hero($left, $top) {
+    
+}
+
+.hex-content {
+    position: absolute;    
+    margin: auto;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-sprite {
+    background: url('./assets/hero.png') no-repeat;
+    width: $hex-size * 0.65;
+    height: $hex-size * 0.84;
+    background-size: ($hex-size * 7.5);
+    image-rendering: pixelated;
+}
+
+.hero-stand {
+    background-position: (-$hex-size / 0.68) (-$hex-size / 5);
+}

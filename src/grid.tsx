@@ -4,6 +4,7 @@ import { State } from './store/store';
 import { connect } from 'react-redux';
 // import { Dispatch } from "redux";
 import { appInit } from "./store/actions";
+import { Hero } from "./hero";
 // import { AppActions, AppInit } from "./store/actions";
 // const heroSprite = require('./assets/hero.png');
 
@@ -23,8 +24,7 @@ class GridComponent extends React.Component<
             <div className="hex" key={i}>
                 <div className="hex-inner">
                     <div className="hex-content"> 
-                        <div className="hero">
-                        </div>
+                        <Hero/>
                     </div>
                 </div>
             </div>)
@@ -46,6 +46,4 @@ class GridComponent extends React.Component<
 }
 
 
-export const Grid = connect(stateToProps, dispatchToProps)(GridComponent)
-
-
+export const Grid = connect(stateToProps, dispatchToProps)(GridComponent);

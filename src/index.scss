@@ -1,62 +1,7 @@
-$hex-size: 3.5rem;
-$hex-margin: 0.02;
-$hex-color: grey;
+@import './styles/hex.scss';
+@import './styles/hero.scss';
 
 * {
     box-sizing: border-box;
 }
 
-// use REM
-
-.hex-row {
-    display: flex;
-    margin-top: $hex-size / 4;
-    &.even {
-        margin-left: $hex-size * (0.5 + $hex-margin);
-    }
-}
-
-.hex {
-    margin: $hex-size * $hex-margin;
-    .hex-inner {
-        // display: flex;
-        position: relative;
-        background: $hex-color;
-        width: $hex-size;
-        height: $hex-size * 0.577;
-        &:before, &:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: $hex-size / 2 solid transparent;
-            border-right: $hex-size / 2 solid transparent;
-        }
-        &:before {
-            top: -$hex-size / 4;
-            border-bottom: $hex-size / 4 solid $hex-color;
-        }
-        &:after {
-            bottom: -$hex-size / 4;
-            border-top: $hex-size / 4 solid $hex-color;
-        }
-    }
-}
-
-.hex-content {
-    position: absolute;    
-    margin: auto;
-    z-index: 1000;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.hero {
-    background: url('./assets/hero.gif') no-repeat (-$hex-size / 1.292) (-$hex-size / 6.25);
-    width: $hex-size * 0.75;
-    height: $hex-size * 0.84;
-    background-size: ($hex-size * 6) ($hex-size * 6);
-    image-rendering: pixelated;
-}

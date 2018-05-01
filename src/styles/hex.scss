@@ -1,0 +1,37 @@
+@import './global-vars.scss';
+
+.hex-row {
+    display: flex;
+    margin-top: $hex-size / 4;
+    &.even {
+        margin-left: $hex-size * (0.5 + $hex-margin);
+    }
+}
+
+.hex {
+    margin: $hex-size * $hex-margin;
+    .hex-inner {
+        // display: flex;
+        position: relative;
+        background: $hex-color;
+        width: $hex-size;
+        height: $hex-size * 0.577;
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: $hex-size / 2 solid transparent;
+            border-right: $hex-size / 2 solid transparent;
+        }
+        &:before {
+            top: -$hex-size / 4;
+            border-bottom: $hex-size / 4 solid $hex-color;
+        }
+        &:after {
+            bottom: -$hex-size / 4;
+            border-top: $hex-size / 4 solid $hex-color;
+        }
+    }
+}
