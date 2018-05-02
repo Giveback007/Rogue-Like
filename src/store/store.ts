@@ -1,10 +1,9 @@
 import { createStore } from 'redux'
 import { Reducer } from "redux";
-import { 
-    // AppActions, 
+import { // AppActions, 
     APP_INIT } from './actions';
 
-export  interface State {
+export interface State {
     test: string;
     grid: any[];
 }
@@ -12,7 +11,7 @@ export  interface State {
 const initState: State = {
     test: 'IT WORKS!',
     // fill not supported by ie11
-    grid: Array(12).fill(0).map((x) => Array(12).fill(0))
+    grid: Array(2).fill(0).map((x) => Array(4).fill(0))
 }
 
 const rootReducer: Reducer<State> = (state = initState, action: any) => {
