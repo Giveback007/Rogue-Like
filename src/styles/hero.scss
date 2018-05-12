@@ -17,10 +17,11 @@
     background: url('./assets/characters/hero/hero-standing [4].png') no-repeat;
     width: 32px;
     height: 36px;
+    transform: scale(2);
     image-rendering: pixelated;
 }
 
 .hr1 { background-position: 0 0; } 
-.hr2 { background-position: -32px 0; } 
+.hr2 { background-position: -32px 0; }
 .hr3 { background-position: (-32px * 2) 0; } 
 .hr4 { background-position: (-32px * 3) 0; }

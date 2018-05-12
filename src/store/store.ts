@@ -1,7 +1,8 @@
-import { createStore } from 'redux'
+import { createStore, Middleware, MiddlewareAPI, Dispatch, Action } from 'redux'
 import { Reducer } from "redux";
 import { // AppActions, 
     APP_INIT } from './actions';
+import { grid } from '../utils';
 
 export interface State {
     test: string;
@@ -10,8 +11,7 @@ export interface State {
 
 const initState: State = {
     test: 'IT WORKS!',
-    // fill not supported by ie11
-    grid: Array(2).fill(0).map((x) => Array(4).fill(0))
+    grid: grid(10, 10)
 }
 
 const rootReducer: Reducer<State> = (state = initState, action: any) => {
@@ -22,5 +22,8 @@ const rootReducer: Reducer<State> = (state = initState, action: any) => {
             return state;
     }
 }
+
+// export const Logger: Middleware = api => next => action => 
+//     next(action)
 
 export const store = createStore(rootReducer);

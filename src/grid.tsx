@@ -1,18 +1,17 @@
-import * as React from "react";
+import React = require("react");
 import { State } from './store/store';
 // import { connector } from "./store/connector";
 import { connect } from 'react-redux';
 // import { Dispatch } from "redux";
-import { appInit } from "./store/actions";
+import { AppActions, AppInit } from "./store/actions";
 import { Hero } from "./hero";
-// import { AppActions, AppInit } from "./store/actions";
-// const heroSprite = require('./assets/hero.png');
+import { Dispatch } from "redux";
 
 const stateToProps = ({ test, grid }: State) => ({ test, grid });
-const dispatchToProps = (dispatch: any
-    // : Dispatch<AppActions>
+const dispatchToProps = (
+    dispatch: Dispatch<AppActions>
 ) => ({
-    appInit: () => dispatch(appInit)
+    appInit: () => dispatch(new AppInit)
 })
 
 class GridComponent extends React.Component<
@@ -24,7 +23,7 @@ class GridComponent extends React.Component<
             <div className="hex" key={i}>
                 <div className="hex-inner">
                     <div className="hex-content"> 
-                        <Hero/>
+                        <Hero />
                     </div>
                 </div>
             </div>)
